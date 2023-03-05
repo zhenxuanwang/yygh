@@ -1,6 +1,7 @@
 package com.wzx.yygh.hosp.controller;
 
 import com.wzx.model.hosp.HospitalSet;
+import com.wzx.yygh.common.result.Result;
 import com.wzx.yygh.hosp.service.HospitalSetService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,16 +21,21 @@ public class HospitalSetController {
     //查询医院设置所有信息
     @ApiOperation("查询医院设置所有信息")
     @GetMapping("findAll")
-    public List<HospitalSet> findHospitalSet() {
+    public Result findHospitalSet() {
         List<HospitalSet> list = hospitalSetService.list();
-        return list;
+        return Result.ok(list);
     }
 
     //逻辑删除医院设置信息
     @ApiOperation("逻辑删除医院设置信息")
     @DeleteMapping("{id}")
-    public boolean removeHospitalSet(@PathVariable Long id) {
-        return hospitalSetService.removeById(id);
+    public Result removeHospitalSet(@PathVariable Long id) {
+         boolean flag = hospitalSetService.removeById(id);
+         if(flag) {
+             return Result.ok();
+         } else {
+             return Result.fail();
+         }
     }
 
 }
