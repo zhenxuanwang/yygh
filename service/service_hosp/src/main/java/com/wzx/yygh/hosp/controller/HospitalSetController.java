@@ -87,4 +87,53 @@ public class HospitalSetController {
         }
     }
 
+    //根据id获取医院设置信息
+    @ApiOperation("根据id获取医院设置信息")
+    @GetMapping("getHospSet/{id}")
+    public Result getHospSet(@PathVariable Long id) {
+        HospitalSet byId = hospitalSetService.getById(id);
+        return Result.ok(byId);
+    }
+
+    //修改医院设置
+    @ApiOperation("修改医院设置")
+    @PostMapping("updateHospitalSet")
+    public Result updateHospitalSet(@RequestBody HospitalSet hospitalSet) {
+        boolean flag = hospitalSetService.updateById(hospitalSet);
+        if(flag) {
+            return Result.ok();
+        }else {
+            return Result.fail();
+        }
+    }
+
+    //批量删除医院设置信息
+    @ApiOperation("批量删除医院设置信息")
+    @DeleteMapping("batchRemove")
+    public Result batchRemove(@RequestBody List<String> idList) {
+        hospitalSetService.removeByIds(idList);
+        return Result.ok();
+    }
+
+    //医院设置状态的锁定和解锁
+    @ApiOperation("医院设置状态的锁定和解锁")
+    @PutMapping("lockHospitalSet/{id}/{status}")
+    public Result lockHospitalSet(@PathVariable Long id,
+                                  @PathVariable Integer status) {
+        HospitalSet hospitalSet = hospitalSetService.getById(id);
+        hospitalSet.setStatus(status);
+        hospitalSetService.updateById(hospitalSet);
+        return Result.ok();
+    }
+
+    //发送医院设置签名密钥
+    @ApiOperation("发送医院设置签名密钥")
+    @PutMapping("sendKey/{id}")
+    public Result sendKey(@PathVariable Long id) {
+        HospitalSet hospitalSet = hospitalSetService.getById(id);
+        String hosname = hospitalSet.getHosname();
+        String hoscode = hospitalSet.getHoscode();
+        //发送短信
+        return Result.ok();
+    }
 }
