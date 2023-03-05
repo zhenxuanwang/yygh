@@ -1,6 +1,6 @@
-package com.wzx.model.hosp;
+package com.wzx.yygh.model.hosp;
 
-import com.wzx.model.base.BaseMongoEntity;
+import com.wzx.yygh.model.base.BaseMongoEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

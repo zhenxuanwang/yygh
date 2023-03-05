@@ -1,4 +1,4 @@
-package com.wzx.model.base;
+package com.wzx.yygh.model.base;
 
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.annotation.Id;

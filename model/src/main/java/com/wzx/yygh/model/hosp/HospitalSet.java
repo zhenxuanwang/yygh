@@ -1,8 +1,8 @@
-package com.wzx.model.hosp;
+package com.wzx.yygh.model.hosp;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.wzx.model.base.BaseEntity;
+import com.wzx.yygh.model.base.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

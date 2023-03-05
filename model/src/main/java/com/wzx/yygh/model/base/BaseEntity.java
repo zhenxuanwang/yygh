@@ -1,4 +1,4 @@
-package com.wzx.model.base;
+package com.wzx.yygh.model.base;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

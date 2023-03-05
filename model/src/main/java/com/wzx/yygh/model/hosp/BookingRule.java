@@ -1,4 +1,4 @@
-package com.wzx.model.hosp;
+package com.wzx.yygh.model.hosp;
 
 import com.alibaba.fastjson.JSONArray;
 import io.swagger.annotations.ApiModel;
