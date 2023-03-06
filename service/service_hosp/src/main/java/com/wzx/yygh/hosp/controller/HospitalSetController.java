@@ -30,7 +30,7 @@ public class HospitalSetController {
     @GetMapping("findAll")
     public Result findHospitalSet() {
         //模拟异常
-        int a = 1 / 0;
+//        int a = 1 / 0;
         List<HospitalSet> list = hospitalSetService.list();
         return Result.ok(list);
     }
@@ -94,12 +94,12 @@ public class HospitalSetController {
     @ApiOperation("根据id获取医院设置信息")
     @GetMapping("getHospSet/{id}")
     public Result getHospSet(@PathVariable Long id) {
-        try {
-            //模拟异常
-            int a = 1 / 0;
-        } catch (Exception e) {
-            throw new HospitalException("失败",201);
-        }
+//        try {
+//            //模拟异常
+//            int a = 1 / 0;
+//        } catch (Exception e) {
+//            throw new HospitalException("失败",201);
+//        }
         HospitalSet byId = hospitalSetService.getById(id);
         return Result.ok(byId);
     }
