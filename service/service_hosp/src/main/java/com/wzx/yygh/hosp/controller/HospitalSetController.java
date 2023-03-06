@@ -2,6 +2,7 @@ package com.wzx.yygh.hosp.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.wzx.yygh.common.exception.HospitalException;
 import com.wzx.yygh.common.utils.MD5;
 import com.wzx.yygh.model.hosp.HospitalSet;
 import com.wzx.yygh.common.result.Result;
@@ -28,6 +29,8 @@ public class HospitalSetController {
     @ApiOperation("查询医院设置所有信息")
     @GetMapping("findAll")
     public Result findHospitalSet() {
+        //模拟异常
+        int a = 1 / 0;
         List<HospitalSet> list = hospitalSetService.list();
         return Result.ok(list);
     }
@@ -91,6 +94,12 @@ public class HospitalSetController {
     @ApiOperation("根据id获取医院设置信息")
     @GetMapping("getHospSet/{id}")
     public Result getHospSet(@PathVariable Long id) {
+        try {
+            //模拟异常
+            int a = 1 / 0;
+        } catch (Exception e) {
+            throw new HospitalException("失败",201);
+        }
         HospitalSet byId = hospitalSetService.getById(id);
         return Result.ok(byId);
     }
