@@ -2,12 +2,11 @@ package com.wzx.yygh.hosp.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.wzx.yygh.common.exception.HospitalException;
 import com.wzx.yygh.common.utils.MD5;
 import com.wzx.yygh.model.hosp.HospitalSet;
 import com.wzx.yygh.common.result.Result;
 import com.wzx.yygh.hosp.service.HospitalSetService;
-import com.wzx.yygh.vo.HospitalSetQueryVo;
+import com.wzx.yygh.vo.hosp.HospitalSetQueryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

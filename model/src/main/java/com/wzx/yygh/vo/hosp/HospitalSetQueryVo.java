@@ -1,4 +1,4 @@
-package com.wzx.yygh.vo;
+package com.wzx.yygh.vo.hosp;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
